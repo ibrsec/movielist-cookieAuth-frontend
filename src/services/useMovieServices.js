@@ -20,6 +20,9 @@ const useMovieServices = () => {
     dispatch(fetchMovieStart());
     try {
       const response = await axios(url,{
+        headers:{
+          "Content-Type":"application/json",
+      },
         withCredentials: true // Bu ayar çerezlerin gönderilmesini sağlar
       });
       console.log(response); 
