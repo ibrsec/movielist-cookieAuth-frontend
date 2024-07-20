@@ -21,6 +21,7 @@ const useMovieServices = () => {
     try {
       const response = await axios(url,{
         headers:{
+          'Access-Control-Allow-Origin': '*', 
           "Content-Type":"application/json",
       },
         withCredentials: true // Bu ayar çerezlerin gönderilmesini sağlar
