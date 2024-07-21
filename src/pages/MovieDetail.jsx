@@ -49,7 +49,7 @@ const MovieDetail = ({ open, setOpen }) => {
 
   useEffect(() => {
     getOneMovie(id);
-  }, [id, getOneMovie]);
+  }, [id]);
 
   useEffect(() => {
     if (oneMovie) {
