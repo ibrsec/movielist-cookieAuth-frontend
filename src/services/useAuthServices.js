@@ -45,6 +45,7 @@ const useAuthServices = () => {
                 headers:{
                     'Access-Control-Allow-Origin': '*', 
                     "Content-Type":"application/json",
+                    "Accept":"application/json",
                 },
                 data: body,
                 withCredentials: true
