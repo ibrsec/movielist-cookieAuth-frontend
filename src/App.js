@@ -3,11 +3,10 @@ import { ToastContainer } from "react-toastify";
 import { persistor, store } from "./app/store/store";
 import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
-import axios from "axios";
+
 // import { CookiesProvider } from "react-cookie";
 
 function App() {
-  axios.defaults.withCredentials = true; 
   return (
     <div className="App">
       <Provider store={store}>

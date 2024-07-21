@@ -4,6 +4,7 @@ import { fetchLoginFail, fetchLoginStart, fetchLoginSuccess, fetchLogoutSuccess,
 import axios from "axios";
 import { toastError, toastSuccess } from "../helpers/toastify";
 import { fetchMoviesLogout } from "../app/features/movieSlice";
+import useAxios from "./useAxios";
 
  
 const useAuthServices = () => {
@@ -11,7 +12,7 @@ const useAuthServices = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const base_url = process.env.REACT_APP_BASE_URL;
-
+const {axiosInstance} = useAxios();
 
     const getUsers = async() => {
         const url = base_url+"/users";
@@ -39,7 +40,7 @@ const useAuthServices = () => {
         console.log(url);
         try {
             dispatch(fetchLoginStart());
-            const response = await axios({
+            const response = await axiosInstance({
                 method: 'post',
                 url,
                 headers:{
@@ -48,7 +49,7 @@ const useAuthServices = () => {
                     "Accept":"application/json",
                 },
                 data: body,
-                withCredentials: true
+                // withCredentials: true
               }) 
               console.log('response login', response)
             toastSuccess(response?.data.message)
