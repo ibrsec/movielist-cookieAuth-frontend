@@ -21,7 +21,7 @@ const useMovieServices = () => {
     try {
       const response = await axios(url,{
         headers:{
-          'Access-Control-Allow-Origin': '*', 
+          'Access-Control-Allow-Origin': 'https://movielist-cookie-auth-frontend.vercel.app', 
           "Content-Type":"application/json",
           "Accept":"application/json",
       },
